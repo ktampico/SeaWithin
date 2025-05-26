@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orm.css">
+    <title>Personality Types & Flowers</title>
+</head>
+
+<body>
+    <header>
+        <h1>Personality Types & Flowers</h1>
+        <input type="text" id="search" placeholder="Search...">
+    </header>
+
+    <section>
+        <h2>Personality Types</h2>
+        <table id="personality-table">
+            <thead>
+                <tr>
+                    <th>U_ID</th>
+                    <th>Name</th>
+                    <th>Word Description</th>
+                    <th>Definition</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Flowers </h2>
+        <table id="flowers-table">
+            <thead>
+                <tr>
+                    <th>U_ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    
+<footer>
+    <p>References:</p>
+    <ul>
+        <li><a href="https://www.myersbriggs.org/my-mbti-personality-type/the-16-mbti-personality-types/" target="_blank">The 16 MBTI® Personality Types, Myers & Briggs Foundation</a></li>
+        <li><a href="https://www.bloomandwild.com/the-blog/floriography-language-of-flowers-meaning" target="_blank">Bloom & Wild: The Language of Flowers</a></li>
+    </ul>
+    <p>&copy; 2025 Kyla Juliana Tampico. All rights reserved.</p>
+</footer>
+
+    <script src="orm.js"></script>
+</body>
+</html>

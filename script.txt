@@ -1,0 +1,45 @@
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('mouseover', () => box.classList.add('revealed'));
+
+    box.addEventListener('click', () => {
+        if (box.classList.contains('revealed')) {
+            box.classList.remove('revealed');
+        } else {
+            openLightbox(box.querySelector('img').src);
+        }
+    });
+});
+
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+}
+
+// Function to dynamically add an image to the grid
+function addImage() {
+    const imageGrid = document.getElementById('image-grid');
+    const newBox = document.createElement('div');
+    newBox.className = 'box';
+    newBox.innerHTML = `
+        New Image
+        <img src="new-image.jpg" alt="New Image">
+    `;
+    newBox.onclick = () => openLightbox('new-image.jpg');
+    imageGrid.appendChild(newBox);
+
+    // Add hover effect
+    newBox.addEventListener('mouseover', () => newBox.classList.add('revealed'));
+    newBox.addEventListener('click', () => {
+        if (newBox.classList.contains('revealed')) {
+            newBox.classList.remove('revealed');
+        } else {
+            openLightbox(newBox.querySelector('img').src);
+        }
+    });
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orm.css">
+    <title>Petals & Persona</title>
+</head>
+
+<header class="header">
+    <a href="index.html" class="logo">SEAWITHIN.</a>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hoa5.html">KMW</a></li>
+            <li><a href="orm.html">Petals & Persona</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <header>
+        <h1>Petals & Persona</h1>
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Search...">
+            <button id="view-data-btn">View Data</button>
+    </header>
+
+    <section id="data-section" style="display: none;">
+        <h2>Personality Types</h2>
+        <div id="personality-message" style="text-align: center; color: red; font-weight: bold;"></div>
+        <table id="personality-table">
+            <thead>
+                <tr>
+                    <th>U_ID</th>
+                    <th>Name</th>
+                    <th>Word Description</th>
+                    <th>Definition</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    
+        <h2>Flowers</h2>
+        <div id="flowers-message" style="text-align: center; color: red; font-weight: bold;"></div>
+        <table id="flowers-table">
+        
+            <div id="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center;">
+                <img id="modal-image" src="" alt="Full-size image" style="max-width: 90%; max-height: 90%;">
+            </div>
+
+            <thead>
+                <tr>
+                    <th>U_ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    
+<footer>
+    <p>References:</p>
+    <ul>
+        <li><a href="https://www.myersbriggs.org/my-mbti-personality-type/the-16-mbti-personality-types/" target="_blank">The 16 MBTI® Personality Types, Myers & Briggs Foundation</a></li>
+        <li><a href="https://www.bloomandwild.com/the-blog/floriography-language-of-flowers-meaning" target="_blank">Bloom & Wild: The Language of Flowers</a></li>
+    </ul>
+    <p>&copy; 2025 Kyla Juliana Tampico. All rights reserved.</p>
+</footer>
+
+    <script src="orm.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+const personalities = [
+    { id: 1, type: "ISTJ", description: "quiet", definition: "serious - practical and responsible" },
+    { id: 2, type: "ISFJ", description: "quiet", definition: "friendly - committed and conscientious" },
+    { id: 3, type: "INFJ", description: "insightful", definition: "idealistic - seeks meaning and connection" },
+    { id: 4, type: "INTJ", description: "strategic", definition: "independent - driven to implement ideas" },
+    { id: 5, type: "ISTP", description: "analytical", definition: "adaptable - problem solver under pressure" },
+    { id: 6, type: "ISFP", description: "sensitive", definition: "kind - values personal space and harmony" },
+    { id: 7, type: "INFP", description: "idealistic", definition: "curious - seeks to understand and help others" },
+    { id: 8, type: "INTP", description: "logical", definition: "abstract - focused on deep problem-solving" },
+    { id: 9, type: "ESTP", description: "energetic", definition: "pragmatic - action-oriented and spontaneous" },
+    { id: 10, type: "ESFP", description: "outgoing", definition: "lively - enjoys life, people, and fun" },
+    { id: 11, type: "ENFP", description: "enthusiastic", definition: "imaginative - sees endless possibilities" },
+    { id: 12, type: "ENTP", description: "clever", definition: "resourceful - generates and analyzes new ideas" },
+    { id: 13, type: "ESTJ", description: "practical", definition: "decisive - organizes people and projects efficiently" },
+    { id: 14, type: "ESFJ", description: "warm", definition: "cooperative - creates harmony and supports others" },
+    { id: 15, type: "ENFJ", description: "empathetic", definition: "inspiring - helps others realize their potential" },
+    { id: 16, type: "ENTJ", description: "bold", definition: "strategic - natural leader and long-term planner" }
+];
+
+
+const flowers = [
+    { id: 1, name: "Rose", color: "Red", meaning: "Love, passion, beauty", img: "https://i.pinimg.com/736x/79/c5/dc/79c5dc47535f09dec6034b5fad91deab.jpg" },
+    { id: 2, name: "Lily", color: "White", meaning: "Purity, virtue, devotion", img: "https://example.com/lily.jpg" },
+    { id: 3, name: "Sunflower", color: "Yellow", meaning: "Adoration, loyalty", img: "https://example.com/sunflower.jpg" },
+    { id: 4, name: "Orchid", color: "Purple", meaning: "Exotic beauty, strength", img: "https://example.com/orchid.jpg" },
+    { id: 5, name: "Daisy", color: "White", meaning: "Innocence, purity, new beginnings", img: "https://example.com/daisy.jpg" },
+    { id: 6, name: "Tulip", color: "Pink", meaning: "Perfect love, elegance", img: "https://example.com/tulip.jpg" },
+    { id: 7, name: "Carnation", color: "Pink", meaning: "Love, fascination", img: "https://example.com/carnation.jpg" },
+    { id: 8, name: "Iris", color: "Blue", meaning: "Faith, wisdom, hope", img: "https://example.com/iris.jpg" },
+    { id: 9, name: "Peony", color: "Pink", meaning: "Prosperity, good fortune", img: "https://example.com/peony.jpg" },
+    { id: 10, name: "Daffodil", color: "Yellow", meaning: "Rebirth, new beginnings", img: "https://example.com/daffodil.jpg" },
+    { id: 11, name: "Hyacinth", color: "Purple", meaning: "Sincerity, constancy", img: "https://example.com/hyacinth.jpg" },
+    { id: 12, name: "Lilac", color: "Purple", meaning: "First love, youthful innocence", img: "https://example.com/lilac.jpg" },
+    { id: 13, name: "Marigold", color: "Orange", meaning: "Joy, warmth, creativity", img: "https://example.com/marigold.jpg" },
+    { id: 14, name: "Poppy", color: "Red", meaning: "Restful sleep, consolation", img: "https://example.com/poppy.jpg" },
+    { id: 15, name: "Chrysanthemum", color: "Yellow", meaning: "Friendship, joy, honesty", img: "https://example.com/chrysanthemum.jpg" },
+    { id: 16, name: "Jasmine", color: "White", meaning: "Sensuality, grace, elegance", img: "https://example.com/jasmine.jpg" },
+    { id: 17, name: "Violet", color: "Purple", meaning: "Modesty, humility", img: "https://example.com/violet.jpg" },
+    { id: 18, name: "Forget-Me-Not", color: "Blue", meaning: "True love, memories", img: "https://example.com/forgetmenot.jpg" },
+    { id: 19, name: "Camellia", color: "Pink", meaning: "Admiration, perfection", img: "https://example.com/camellia.jpg" },
+    { id: 20, name: "Gerbera Daisy", color: "Orange", meaning: "Cheerfulness, innocence", img: "https://example.com/gerbera.jpg" },
+    { id: 21, name: "Anemone", color: "Purple", meaning: "Anticipation, fragility", img: "https://example.com/anemone.jpg" },
+    { id: 22, name: "Calla Lily", color: "White", meaning: "Elegance, purity", img: "https://example.com/callalily.jpg" },
+    { id: 23, name: "Zinnia", color: "Multicolor", meaning: "Thoughts of absent friends", img: "https://example.com/zinnia.jpg" },
+    { id: 24, name: "Snapdragon", color: "Pink", meaning: "Graciousness, strength", img: "https://example.com/snapdragon.jpg" },
+    { id: 25, name: "Gladiolus", color: "Red", meaning: "Strength of character", img: "https://example.com/gladiolus.jpg" },
+    { id: 26, name: "Sweet Pea", color: "Pink", meaning: "Pleasure, gratitude", img: "https://example.com/sweetpea.jpg" },
+    { id: 27, name: "Primrose", color: "Yellow", meaning: "Young love, eternal love", img: "https://example.com/primrose.jpg" },
+    { id: 28, name: "Bluebell", color: "Blue", meaning: "Humility, constancy", img: "https://example.com/bluebell.jpg" },
+    { id: 29, name: "Aster", color: "Purple", meaning: "Patience, elegance", img: "https://example.com/aster.jpg" },
+    { id: 30, name: "Lavender", color: "Purple", meaning: "Serenity, calmness", img: "https://example.com/lavender.jpg" }
+];
+
+
+const personalityTableBody = document.querySelector('#personality-table tbody');
+personalities.forEach(person => {
+    personalityTableBody.innerHTML += `
+        <tr>
+            <td>${person.id}</td>
+            <td>${person.type}</td>
+            <td>${person.description}</td>
+            <td>${person.definition}</td>
+        </tr>
+    `;
+});
+
+
+const flowersTableBody = document.querySelector('#flowers-table tbody');
+flowers.forEach(flower => {
+    flowersTableBody.innerHTML += `
+        <tr>
+            <td>${flower.id}</td>
+            <td><img src="${flower.img}" alt="${flower.name}"></td>
+            <td>${flower.name}</td>
+            <td>${flower.color}</td>
+            <td>${flower.meaning}</td>
+        </tr>
+    `;
+});
+
+
+document.getElementById("search").addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+
+    const filteredPersonalities = personalities.filter(p =>
+        p.type.toLowerCase().includes(searchTerm) || p.description.toLowerCase().includes(searchTerm)
+    );
+
+    const filteredFlowers = flowers.filter(f =>
+        f.name.toLowerCase().includes(searchTerm) || f.meaning.toLowerCase().includes(searchTerm)
+    );
+
+    personalityTableBody.innerHTML = filteredPersonalities.map(p => `
+        <tr>
+            <td>${p.id}</td>
+            <td>${p.type}</td>
+            <td>${p.description}</td>
+            <td>${p.definition}</td>
+        </tr>
+    `).join('');
+
+    flowersTableBody.innerHTML = filteredFlowers.map(f => `
+        <tr>
+            <td>${f.id}</td>
+            <td><img src="${f.img}" alt="${f.name}"></td>
+            <td>${f.name}</td>
+            <td>${f.color}</td>
+            <td>${f.meaning}</td>
+        </tr>
+    `).join('');
+});

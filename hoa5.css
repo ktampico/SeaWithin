@@ -1,0 +1,243 @@
+body {
+    background-color: #faf3e0;
+    font-family: Playfair Display, serif;
+    text-align: center;
+    padding: 20px;
+    cursor: url('pointer.png'), default;
+    color: #2e2e2e;
+    margin-top: 90px;
+}
+
+h1 {
+    color: #5a4a42;
+    font-weight: bold;
+    padding-top: 30px;
+    
+}
+
+p {
+    color: black;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; 
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    margin-top: 5px;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e6d5b8; 
+    z-index: 1000;
+    padding: 10px 20px;
+    border-bottom: 2px solid #c4a484; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5a4a42; 
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: auto; 
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black; 
+    font-size: 1rem;
+    padding: 5px 10px;
+    font-family: 'Playfair Display', serif;
+    transition: font-weight 0.3s ease;
+}
+
+.nav-list li a:hover {
+    font-weight: bold; 
+}
+
+.nav-list li.active a {
+    font-weight: bold;
+    color: #5a4a42; 
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 50px;
+    justify-content: center;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.box {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #5a4a42;
+    background-color: #fefefe;
+    color: #2e2e2e;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+.box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center center; 
+    border: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    opacity: 0; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box.revealed {
+    color: transparent;
+    background-color: #fff;
+}
+
+.box.revealed img {
+    opacity: 1; 
+}
+
+.box.revealed:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.05);
+}
+
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: zoomIn 0.3s ease forwards;
+}
+
+.add-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 1 / 1; 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #888;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 100%; 
+    height: auto; 
+
+.add-image:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: #e0e0e0; 
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+footer {
+    background-color: #5a4a42; 
+    color: #5a4a42; 
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 2px solid #c4a484; 
+}
+
+footer a {
+    color: #5a4a42; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #a67c52; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+}
