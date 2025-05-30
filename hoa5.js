@@ -66,3 +66,54 @@ function deleteImage(button) {
     const box = button.closest('.box');
     box.remove();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            const href = link.getAttribute('href');
+
+            if (href.startsWith('#')) {
+                // Internal link within the same page
+                event.preventDefault();
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // External link to another page
+                window.location.href = href;
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            const href = link.getAttribute('href');
+
+            if (href.startsWith('#')) {
+                // Internal link within the same page
+                event.preventDefault();
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.error(`Section with ID ${href} not found.`);
+                }
+            } else if (href.includes('#')) {
+                // External link to another page with a section reference
+                event.preventDefault();
+                const [page, sectionId] = href.split('#');
+                window.location.href = `${page}#${sectionId}`;
+            } else {
+                // External link to another page
+                window.location.href = href;
+            }
+        });
+    });
+});

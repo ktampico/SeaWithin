@@ -1,9 +1,11 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    background-color: #faf3e0;
-    font-family: Playfair Display, serif;
+    background-color: #fff;
+    font-family: 'Playfair Display', serif;
     text-align: center;
     padding: 20px;
-    cursor: url('pointer.png'), default;
     color: #2e2e2e;
     margin-top: 90px;
 }
@@ -12,7 +14,6 @@ h1 {
     color: #5a4a42;
     font-weight: bold;
     padding-top: 30px;
-    
 }
 
 p {
@@ -24,45 +25,22 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent; 
+    background-color: #ffffff; /* White background for navbar */
     z-index: 1000;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: none;
-    margin-top: 5px;
-}
-
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #e6d5b8; 
-    z-index: 1000;
-    padding: 10px 20px;
-    border-bottom: 2px solid #c4a484; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #5a4a42; 
-    text-decoration: none;
-    margin-right: auto;
+    padding: 10px 10px;
+    border-bottom: 2px solid #c4a484; /* Optional border for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between logo and nav list */
+    align-items: center; /* Center items vertically */
 }
 
 .nav-list {
-    display: flex;
+    display: flex; /* Use flexbox for horizontal alignment */
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-right: auto; 
+    justify-content: flex-end; /* Align navigation items to the right */
 }
 
 .nav-list li {
@@ -71,23 +49,33 @@ p {
 
 .nav-list li a {
     text-decoration: none;
-    color: black; 
+    color: black;
     font-size: 1rem;
     padding: 5px 10px;
     font-family: 'Playfair Display', serif;
-    transition: font-weight 0.3s ease;
+    transition: font-weight 0.3s ease, color 0.3s ease;
 }
 
 .nav-list li a:hover {
-    font-weight: bold; 
+    font-weight: bold;
+    color: #a67c52; /* Optional hover color */
 }
 
 .nav-list li.active a {
     font-weight: bold;
-    color: #5a4a42; 
+    color: #5a4a42; /* Active link color */
 }
 
+.logo img {
+    width: 73px;   
+    height: 40px; 
+    display: flex;
+    margin-top: auto; 
+    margin-bottom: auto;
+    margin-left: 20px;
+}
 
+/* Container Section */
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -107,7 +95,7 @@ p {
     justify-content: center;
     font-size: 18px;
     font-weight: bold;
-    border: 2px solid #5a4a42;
+    border: 2px solid #c4a484;
     background-color: #fefefe;
     color: #2e2e2e;
     cursor: pointer;
@@ -127,11 +115,11 @@ p {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: center center; 
+    object-fit: cover;
+    object-position: center center;
     border: none;
     transition: transform 0.3s ease, filter 0.3s ease;
-    opacity: 0; 
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -143,7 +131,7 @@ p {
 }
 
 .box.revealed img {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .box.revealed:hover img {
@@ -151,7 +139,7 @@ p {
     filter: brightness(1.05);
 }
 
-
+/* Lightbox Section */
 .lightbox {
     position: fixed;
     top: 0;
@@ -180,6 +168,7 @@ p {
     animation: zoomIn 0.3s ease forwards;
 }
 
+/* Add Image Section */
 .add-image {
     display: flex;
     align-items: center;
@@ -188,56 +177,67 @@ p {
     border: 2px dashed #ccc;
     cursor: pointer;
     position: relative;
-    aspect-ratio: 1 / 1; 
-    font-size: 18px; 
-    font-weight: bold; 
+    aspect-ratio: 1 / 1;
+    font-size: 18px;
+    font-weight: bold;
     color: #888;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
+}
 
 .add-image:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-    background-color: #e0e0e0; 
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #e0e0e0;
 }
+
+/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
+/* Responsive Design */
 @media (max-width: 900px) {
     .container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-
+/* Footer Section */
 footer {
-    background-color: #5a4a42; 
-    color: #5a4a42; 
+    background-color: #5a4a42;
+    color: #5a4a42;
     text-align: center;
     padding: 20px;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
-    border-top: 2px solid #c4a484; 
+    border-top: 2px solid #c4a484;
 }
 
 footer a {
-    color: #5a4a42; 
+    color: #5a4a42;
     text-decoration: none;
     font-weight: 600;
 }
 
 footer a:hover {
     text-decoration: underline;
-    color: #a67c52; 
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    color: #a67c52;
 }
